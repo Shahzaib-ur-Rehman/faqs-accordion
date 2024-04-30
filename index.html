@@ -11,56 +11,86 @@
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Frontend Mentor | FAQ accordion</title>
+
+    <style>
+      [data-state="no-js"] .disclosure__content {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <main>
       <section class="faqs_section">
         <div class="faqs">
-            <h2>Faqs</h2>
-          <div class="faq">
-            <div class="accordion">
-              <h3>What is Frontend Mentor, and how will it help me?</h3>
-            </div>
-            <div class="panel">
+          <h2 class="title">Faqs</h2>
+          <div class="faq" data-state="no-js">
+            <button
+              aria-expanded="false"
+              class="accordion"
+              aria-controls="content"
+              disabled
+              title="This button becomes functional once JavaScript is active"
+            >
+              What is Frontend Mentor, and how will it help me?
+            </button>
+            <div class="panel" id="content">
               Frontend Mentor offers realistic coding challenges to help
               developers improve their frontend coding skills with projects in
               HTML, CSS, and JavaScript. It's suitable for all levels and ideal
               for portfolio building.
             </div>
           </div>
-          <div class="faq">
-            <div class="accordion">
-              <h3>Is Frontend Mentor free?</h3>
-            </div>
-            <div class="panel">
+          <div class="faq" data-state="no-js">
+            <button
+              aria-expanded="false"
+              class="accordion"
+              aria-controls="content"
+              disabled
+              title="This button becomes functional once JavaScript is active"
+            >
+              Is Frontend Mentor free?
+            </button>
+            <div class="panel" id="content">
               Yes, Frontend Mentor offers both free and premium coding
               challenges, with the free option providing access to a range of
               projects suitable for all skill levels.
             </div>
           </div>
-          <div class="faq">
-            <div class="accordion">
-              <h3>Can I use Frontend Mentor projects in my portfolio?</h3>
-            </div>
-            <div class="panel">
+          <div class="faq" data-state="no-js">
+            <button
+              aria-expanded="false"
+              class="accordion"
+              aria-controls="content"
+              disabled
+              title="This button becomes functional once JavaScript is active"
+            >
+              Can I use Frontend Mentor projects in my portfolio?
+            </button>
+            <div class="panel" id="content">
               Yes, you can use projects completed on Frontend Mentor in your
               portfolio. It's an excellent way to showcase your skills to
               potential employers!
             </div>
           </div>
-          <div class="faq">
-            <div class="accordion">
-              <h3>
-                How can I get help if I'm stuck on a Frontend Mentor challenge?
-              </h3>
-             
-            </div>
-            <div class="panel">
+          <div class="faq" data-state="no-js">
+            <button
+              aria-expanded="false"
+              class="accordion"
+              aria-controls="content"
+              disabled
+              title="This button becomes functional once JavaScript is active"
+            >
+              How can I get help if I'm stuck on a Frontend Mentor challenge?
+            </button>
+            <div class="panel" id="content">
               The best place to get help is inside Frontend Mentor's Discord
               community. There's a help channel where you can ask questions and
               seek support from other community members.
@@ -69,21 +99,16 @@
         </div>
       </section>
     </main>
-    <script>
-      var acc = document.getElementsByClassName("accordion");
-      var i;
-     
-      for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function() {
-          this.classList.toggle("active");
-          var panel = this.nextElementSibling;
-          if (panel.style.display === "block") {
-            panel.style.display = "none";
-          } else {
-            panel.style.display = "block";
-          }
-        });
-      }
-      </script>
+
+    <noscript>
+      <!-- Show all content if no JS (avoids CLS) -->
+      <style>
+        [data-state="no-js"] .disclosure__content {
+          display: block;
+        }
+      </style>
+    </noscript>
+    <!-- partial -->
+    <script src="./script.js"></script>
   </body>
 </html>

@@ -106,15 +106,16 @@ body {
   max-width: 37.5rem;
   padding: 1.5em 1em;
   border-radius: 0.5rem;
+   
 }
-.faqs > h2 {
+.title{
   display: inline-flex;
   align-items: center;
   gap: 1rem;
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
-.faqs > h2::before {
+.title::before {
   content: url("./assets/images/icon-star.svg");
 }
 
@@ -127,22 +128,31 @@ body {
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  border: 0;
+  background-color: unset;
+  font-size: 1rem;
+  font-weight: var(--fw-bold);
+  text-align: left;
 }
 
-.accordion > h3 {
-  max-width: 16rem;
-}
-.accordion > h3:hover {
+.accordion:hover,.accordion:focus-visible{
   color: var(--clr-primary-600);
 }
 
-.accordion:after {
+.accordion[aria-expanded=false]::after{
   content: url("./assets/images/icon-plus.svg"); /* Unicode character for "plus" sign (+) */
 }
-
-.active:after {
+.accordion[aria-expanded=true]::after{
   content: url("./assets/images/icon-minus.svg"); /* Unicode character for "minus" sign (-) */
 }
+.accordion[aria-expanded=false] + .panel {
+  display: none;
+}
+.accordion[aria-expanded=true] + .panel {
+  display: block;
+} 
+ 
 
 .panel {
   margin-block: 1em;
@@ -153,8 +163,11 @@ body {
   .faqs_section {
     background-image: url("./assets/images/background-pattern-desktop.svg");
   }
-
-  .accordion > h3 {
-    max-width: 100%;
+  .accordion{
+    font-size: 1.125rem;
   }
+
+  
 }
+ 
+ 
